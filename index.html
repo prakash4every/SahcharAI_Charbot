@@ -66,6 +66,60 @@
             margin-bottom: 24px;
             line-height: 1.5;
         }
+
+        /* ===== WHAT'S NEW SECTION ===== */
+        .whats-new {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 16px 16px 18px;
+            margin: 12px 0 20px;
+            border: 1px solid rgba(252, 211, 77, 0.1);
+            text-align: left;
+        }
+        .whats-new .title {
+            color: #fcd34d;
+            font-size: 13px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .whats-new ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .whats-new ul li {
+            color: #cbd5e1;
+            font-size: 12px;
+            padding: 4px 0 4px 24px;
+            position: relative;
+            line-height: 1.5;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+        .whats-new ul li:last-child {
+            border-bottom: none;
+        }
+        .whats-new ul li::before {
+            content: "✦";
+            position: absolute;
+            left: 2px;
+            color: #fcd34d;
+            font-size: 10px;
+        }
+        .whats-new .file-size-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.06);
+            color: #94a3b8;
+            font-size: 10px;
+            padding: 2px 12px;
+            border-radius: 20px;
+            margin-top: 8px;
+        }
+
         .features {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -298,6 +352,10 @@
             .testing-stat .num {
                 font-size: 16px;
             }
+            .whats-new ul li {
+                font-size: 11px;
+                padding: 3px 0 3px 20px;
+            }
         }
         @media (max-width: 360px) {
             .features {
@@ -320,6 +378,19 @@
         <h1>SahcharAI</h1>
         <div class="version-badge">📦 v4.8 (38)</div>
         <p class="tagline">भारत का स्मार्ट AI साथी — हिंदी में बात करें, तस्वीरें बनाएं, और भी बहुत कुछ</p>
+
+        <!-- ===== WHAT'S NEW SECTION ===== -->
+        <div class="whats-new">
+            <div class="title">✨ What's New in v4.8</div>
+            <ul>
+                <li>नया लाइव ऑडियो कॉलिंग — SahcharAI और SahcharAssistant के साथ रीयल-टाइम वॉयस बातचीत</li>
+                <li>लाइव ट्रांसक्रिप्शन — AI असिस्टेंट के साथ बात करते समय रीयल-टाइम टेक्स्ट देखें</li>
+                <li>बेहतर UI एनिमेशन — सहज वॉयस अनुभव के लिए माइक्रोफोन और वेव एनिमेशन</li>
+                <li>SuperSahchar विशेष — तुरंत लाइव ऑडियो के लिए समर्पित लॉन्ग-प्रेस फीचर</li>
+                <li>बग फिक्स — सभी बॉट इंटरैक्शन में बेहतर स्थिरता और प्रदर्शन</li>
+            </ul>
+            <div class="file-size-badge">📦 16.3 MB • Android 7.0+</div>
+        </div>
 
         <!-- Features -->
         <div class="features">
@@ -414,7 +485,7 @@
             <span class="qr-label">📱 QR Code Scan करें और APK डाउनलोड करें</span>
         </div>
 
-        <!-- ===== DOWNLOAD BUTTON - SAHI FILE NAME ===== -->
+        <!-- ===== DOWNLOAD BUTTON ===== -->
         <a
             class="btn-download"
             href="https://github.com/prakash4every/SahcharAI_Charbot/releases/download/38(4.8)/SahcharAI.apk"
@@ -423,7 +494,7 @@
             <svg viewBox="0 0 24 24"><path d="M5 20h14v-2H5v2zm7-18v13.17l-3.59-3.58L7 13l5 5 5-5-1.41-1.41L12 15.17V2z"/></svg>
             📥 APK डाउनलोड करें (v4.8)
         </a>
-        <div class="file-size">📦 फ़ाइल आकार: ~15 MB • Android 7.0+</div>
+        <div class="file-size">📦 फ़ाइल आकार: 16.3 MB • Android 7.0+</div>
 
         <!-- Footer -->
         <div class="footer">
