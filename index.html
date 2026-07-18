@@ -111,6 +111,105 @@
             margin-top: 10px;
             display: block;
         }
+
+        /* ===== TESTING TRACK SECTION ===== */
+        .testing-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 18px 16px 20px;
+            margin: 16px 0 20px;
+            border: 2px solid rgba(252, 211, 77, 0.15);
+        }
+        .testing-title {
+            color: #fcd34d;
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        .testing-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        .testing-stat {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 10px 4px;
+            text-align: center;
+        }
+        .testing-stat .num {
+            font-size: 20px;
+            font-weight: 700;
+            color: #fcd34d;
+            display: block;
+        }
+        .testing-stat .label {
+            font-size: 10px;
+            color: #94a3b8;
+            display: block;
+            margin-top: 2px;
+        }
+        .testing-progress {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 10px 12px;
+            margin-bottom: 12px;
+        }
+        .testing-progress .progress-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            color: #94a3b8;
+        }
+        .testing-progress .progress-bar {
+            background: #334155;
+            height: 6px;
+            border-radius: 10px;
+            margin-top: 4px;
+        }
+        .testing-progress .progress-bar .fill {
+            background: #fcd34d;
+            height: 6px;
+            border-radius: 10px;
+            width: 75%;
+        }
+        .testing-link {
+            font-size: 11px;
+            color: #94a3b8;
+            word-break: break-all;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 10px 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .testing-link a {
+            color: #60a5fa;
+            text-decoration: underline;
+            font-size: 11px;
+        }
+        .testing-link .link-label {
+            color: #fcd34d;
+            font-weight: 600;
+        }
+        .testing-note {
+            font-size: 10px;
+            color: #64748b;
+            margin-top: 10px;
+            padding: 8px 12px;
+            background: rgba(239, 68, 68, 0.08);
+            border-radius: 10px;
+            border-left: 3px solid #ef4444;
+            text-align: left;
+        }
+        .testing-note strong {
+            color: #fca5a5;
+        }
+
         .btn-download {
             display: inline-flex;
             align-items: center;
@@ -192,6 +291,13 @@
             h1 {
                 font-size: 24px;
             }
+            .testing-stats {
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 4px;
+            }
+            .testing-stat .num {
+                font-size: 16px;
+            }
         }
         @media (max-width: 360px) {
             .features {
@@ -207,10 +313,15 @@
 </head>
 <body>
     <div class="card">
+        <!-- App Icon -->
         <div class="app-icon">🧘</div>
+
+        <!-- Title -->
         <h1>SahcharAI</h1>
         <div class="version-badge">📦 v4.8 (38)</div>
         <p class="tagline">भारत का स्मार्ट AI साथी — हिंदी में बात करें, तस्वीरें बनाएं, और भी बहुत कुछ</p>
+
+        <!-- Features -->
         <div class="features">
             <div class="feature-item">
                 <span class="icon">🎙️</span>
@@ -245,9 +356,56 @@
                 <span class="label">SuperSahchar</span>
             </div>
         </div>
+
+        <!-- ===== PLAY STORE TESTING TRACK SECTION ===== -->
+        <div class="testing-section">
+            <div class="testing-title">
+                🧪 Play Store Testing Status
+                <span style="font-size:10px; background:rgba(252,211,77,0.15); color:#fcd34d; padding:2px 10px; border-radius:20px;">Live</span>
+            </div>
+
+            <div class="testing-stats">
+                <div class="testing-stat">
+                    <span class="num">9/12</span>
+                    <span class="label">👥 Testers</span>
+                </div>
+                <div class="testing-stat">
+                    <span class="num">14</span>
+                    <span class="label">⏳ Days</span>
+                </div>
+                <div class="testing-stat">
+                    <span class="num">75%</span>
+                    <span class="label">📊 Progress</span>
+                </div>
+            </div>
+
+            <div class="testing-progress">
+                <div class="progress-row">
+                    <span>Testing Progress</span>
+                    <span>75% Complete</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="fill" style="width:75%;"></div>
+                </div>
+            </div>
+
+            <div class="testing-link">
+                <span class="link-label">📲 Testing Link:</span>
+                <a href="https://play.google.com/apps/internaltest/4701205749432279010" target="_blank">
+                    play.google.com/apps/internaltest/4701205749432279010
+                </a>
+            </div>
+
+            <div class="testing-note">
+                ⚠️ <strong>Important:</strong> Play Store testing link से install करें।<br>
+                Direct APK install से tester count नहीं होता!
+            </div>
+        </div>
+
+        <!-- QR Code Section -->
         <div class="qr-section">
             <img
-                src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://github.com/prakash4every/sahchar-ai-backend/releases/download/38%284.8%29/SahcharAI.apk&bgcolor=ffffff&color=1e293b&margin=12"
+                src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://github.com/prakash4every/SahcharAI_Charbot/releases/download/38(4.8)/SahcharAI.apk&bgcolor=ffffff&color=1e293b&margin=12"
                 alt="SahcharAI APK QR Code"
                 width="160"
                 height="160"
@@ -255,6 +413,8 @@
             />
             <span class="qr-label">📱 QR Code Scan करें और APK डाउनलोड करें</span>
         </div>
+
+        <!-- ===== DOWNLOAD BUTTON - FIXED LINK ===== -->
         <a
             class="btn-download"
             href="https://github.com/prakash4every/SahcharAI_Charbot/releases/download/38(4.8)/SahcharAI.apk"
@@ -264,12 +424,14 @@
             📥 APK डाउनलोड करें (v4.8)
         </a>
         <div class="file-size">📦 फ़ाइल आकार: ~15 MB • Android 7.0+</div>
+
+        <!-- Footer -->
         <div class="footer">
             <div>👨‍💻 Developer: Ram Prakash Kumar</div>
             <div style="margin-top: 4px;">🏢 SahcharAI Team</div>
             <div class="github-link">
                 <span>🔗</span>
-                <a href="https://github.com/prakash4every/sahchar-ai-backend/releases/tag/38(4.8)" target="_blank">GitHub Release</a>
+                <a href="https://github.com/prakash4every/SahcharAI_Charbot/releases/tag/38(4.8)" target="_blank">GitHub Release</a>
             </div>
         </div>
     </div>
