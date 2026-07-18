@@ -485,11 +485,14 @@
             <span class="qr-label">📱 QR Code Scan करें और APK डाउनलोड करें</span>
         </div>
 
-        <!-- ===== DOWNLOAD BUTTON ===== -->
+        <!-- ============================================================ -->
+        <!-- ===== CORRECT DOWNLOAD BUTTON - FORCED SAHI URL ===== -->
+        <!-- ============================================================ -->
         <a
             class="btn-download"
             href="https://github.com/prakash4every/SahcharAI_Charbot/releases/download/38(4.8)/SahcharAI.apk"
             download
+            id="downloadBtn"
         >
             <svg viewBox="0 0 24 24"><path d="M5 20h14v-2H5v2zm7-18v13.17l-3.59-3.58L7 13l5 5 5-5-1.41-1.41L12 15.17V2z"/></svg>
             📥 APK डाउनलोड करें (v4.8)
@@ -502,9 +505,44 @@
             <div style="margin-top: 4px;">🏢 SahcharAI Team</div>
             <div class="github-link">
                 <span>🔗</span>
-                <a href="https://github.com/prakash4every/SahcharAI_Charbot/releases/tag/38(4.8)" target="_blank">GitHub Release</a>
+                <a href="https://github.com/prakash4every/SahcharAI_Charbot/releases/tag/38(4.8)" target="_blank" id="releaseLink">GitHub Release</a>
             </div>
         </div>
     </div>
+
+    <!-- ============================================================ -->
+    <!-- ===== JAVASCRIPT - FORCEFULLY CORRECT URL ===== -->
+    <!-- ============================================================ -->
+    <script>
+        (function() {
+            // Correct URLs
+            const CORRECT_DOWNLOAD_URL = "https://github.com/prakash4every/SahcharAI_Charbot/releases/download/38(4.8)/SahcharAI.apk";
+            const CORRECT_RELEASE_URL = "https://github.com/prakash4every/SahcharAI_Charbot/releases/tag/38(4.8)";
+
+            // Get elements
+            const downloadBtn = document.getElementById('downloadBtn');
+            const releaseLink = document.getElementById('releaseLink');
+
+            // Forcefully set correct href attributes
+            if (downloadBtn) {
+                downloadBtn.href = CORRECT_DOWNLOAD_URL;
+                console.log("✅ Download button URL fixed to:", CORRECT_DOWNLOAD_URL);
+            }
+
+            if (releaseLink) {
+                releaseLink.href = CORRECT_RELEASE_URL;
+                console.log("✅ Release link URL fixed to:", CORRECT_RELEASE_URL);
+            }
+
+            // Also fix any other download links if present (e.g., in banner)
+            document.querySelectorAll('a[href*="sahchar-ai-backend"]').forEach(function(el) {
+                el.href = CORRECT_DOWNLOAD_URL;
+                console.log("✅ Fixed additional link:", el);
+            });
+
+            // Optional: Log to confirm
+            console.log("🔗 SahcharAI Download Page - All links are now correct!");
+        })();
+    </script>
 </body>
 </html>
