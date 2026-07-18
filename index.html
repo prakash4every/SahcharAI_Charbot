@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>SahcharAI v4.8 – Download APK</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .card {
+            max-width: 480px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 48px;
+            padding: 32px 24px 40px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+            text-align: center;
+        }
+        .app-icon {
+            width: 88px;
+            height: 88px;
+            background: linear-gradient(135deg, #b45309, #92400e);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 40px;
+            box-shadow: 0 12px 30px rgba(180, 83, 9, 0.3);
+        }
+        h1 {
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        .version-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fcd34d;
+            padding: 4px 16px;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 6px 0 16px;
+            border: 1px solid rgba(252, 211, 77, 0.2);
+        }
+        .tagline {
+            color: #94a3b8;
+            font-size: 16px;
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 20px 0 28px;
+        }
+        .feature-item {
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 14px 8px;
+            text-align: center;
+            transition: 0.2s;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+        }
+        .feature-item .icon {
+            font-size: 26px;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .feature-item .label {
+            color: #e2e8f0;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .qr-section {
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 24px;
+            padding: 20px 16px 18px;
+            margin: 16px 0 24px;
+            border: 1px dashed rgba(255, 255, 255, 0.12);
+        }
+        .qr-section img {
+            width: 160px;
+            height: 160px;
+            border-radius: 16px;
+            background: white;
+            padding: 8px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+        .qr-label {
+            color: #94a3b8;
+            font-size: 13px;
+            margin-top: 10px;
+            display: block;
+        }
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #16a34a, #15803d);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 60px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 28px rgba(22, 163, 74, 0.3);
+        }
+        .btn-download:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 36px rgba(22, 163, 74, 0.45);
+        }
+        .btn-download:active {
+            transform: scale(0.97);
+        }
+        .btn-download svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+        .file-size {
+            color: #64748b;
+            font-size: 13px;
+            margin-top: 12px;
+        }
+        .footer {
+            margin-top: 24px;
+            color: #475569;
+            font-size: 13px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding-top: 20px;
+        }
+        .footer a {
+            color: #60a5fa;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #94a3b8;
+            font-size: 13px;
+            margin-top: 12px;
+        }
+        @media (max-width: 420px) {
+            .card {
+                padding: 24px 16px 30px;
+            }
+            .features {
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+            }
+            .feature-item {
+                padding: 10px 6px;
+            }
+            .feature-item .icon {
+                font-size: 22px;
+            }
+            .feature-item .label {
+                font-size: 11px;
+            }
+            .qr-section img {
+                width: 130px;
+                height: 130px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+        }
+        @media (max-width: 360px) {
+            .features {
+                grid-template-columns: 1fr 1fr;
+                gap: 6px;
+            }
+            .btn-download {
+                font-size: 16px;
+                padding: 14px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <!-- App Icon -->
+        <div class="app-icon">🧘</div>
+
+        <!-- Title -->
+        <h1>SahcharAI</h1>
+        <div class="version-badge">📦 v4.8 (38)</div>
+        <p class="tagline">भारत का स्मार्ट AI साथी — हिंदी में बात करें, तस्वीरें बनाएं, और भी बहुत कुछ</p>
+
+        <!-- Features -->
+        <div class="features">
+            <div class="feature-item">
+                <span class="icon">🎙️</span>
+                <span class="label">Live Audio Call</span>
+            </div>
+            <div class="feature-item">
+                <span class="icon">📝</span>
+                <span class="label">Live Transcription</span>
+            </div>
+            <div class="feature-item">
+                <span class="icon">🎨</span>
+                <span class="label">AI Image Gen</span>
+            </div>
+            <div class="feature-item">
+                <span class="icon">🎬</span>
+                <span class="label">AI Video Gen</span>
+            </div>
+            <div class="feature-item">
+                <span class="icon">📄</span>
+                <span class="label">Document OCR</span>
+            </div>
+            <div class="feature-item">
+                <span class="icon">🧠</span>
+                <span class="label">Smart Memory</span>
+            </div>
+            <div class="feature-item">
+                <span class="icon">🌐</span>
+                <span class="label">Hindi/English</span>
+            </div>
+            <div class="feature-item">
+                <span class="icon">⚡</span>
+                <span class="label">SuperSahchar</span>
+            </div>
+        </div>
+
+        <!-- QR Code Section -->
+        <div class="qr-section">
+            <!-- ✅ QR Code Image – GitHub Release Direct Download -->
+            <img
+            src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://github.com/prakash4every/sahchar-ai-backend/releases/download/38%284.8%29/app-release.apk&bgcolor=ffffff&color=1e293b&margin=12"
+            alt="SahcharAI APK QR Code"
+            width="160"
+            height="160"
+            loading="lazy"
+            />
+            <span class="qr-label">📱 QR Code Scan करें और APK डाउनलोड करें</span>
+        </div>
+
+        <!-- Download Button (Direct APK from GitHub Release) -->
+        <a
+        class="btn-download"
+        href="https://github.com/prakash4every/sahchar-ai-backend/releases/download/38%284.8%29/app-release.apk"
+        download
+        >
+        <svg viewBox="0 0 24 24"><path d="M5 20h14v-2H5v2zm7-18v13.17l-3.59-3.58L7 13l5 5 5-5-1.41-1.41L12 15.17V2z"/></svg>
+        📥 APK डाउनलोड करें (v4.8)
+    </a>
+    <div class="file-size">📦 फ़ाइल आकार: ~15 MB • Android 7.0+</div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div>👨‍💻 Developer: Ram Prakash Kumar</div>
+        <div style="margin-top: 4px;">🏢 SahcharAI Team</div>
+        <div class="github-link">
+            <span>🔗</span>
+            <a href="https://github.com/prakash4every/sahchar-ai-backend/releases/tag/38(4.8)" target="_blank">GitHub Release</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
