@@ -484,6 +484,7 @@
     />
     <span class="qr-label">📱 QR Code Scan करें और APK डाउनलोड करें</span>
 </div>
+
        <!-- ===== DOWNLOAD BUTTON ===== -->
 <a
     class="btn-download"
@@ -493,6 +494,7 @@
     <svg viewBox="0 0 24 24"><path d="M5 20h14v-2H5v2zm7-18v13.17l-3.59-3.58L7 13l5 5 5-5-1.41-1.41L12 15.17V2z"/></svg>
     📥 APK डाउनलोड करें (v4.8)
 </a>
+
         <div class="file-size">📦 फ़ाइल आकार: 16.3 MB • Android 7.0+</div>
 
         <!-- Footer -->
@@ -503,45 +505,5 @@
 </div>
         </div>
     </div>
-
-    <!-- ============================================================ -->
-    <!-- ===== JAVASCRIPT - FORCEFULLY CORRECT ALL LINKS ===== -->
-    <!-- ============================================================ -->
-    <script>
-        (function() {
-            // Sahi URLs (Nayi Repository)
-            const CORRECT_DOWNLOAD_URL = "https://github.com/prakash4every/SahcharAI_Charbot/releases/download/38(4.8)/SahcharAI.apk";
-            const CORRECT_RELEASE_URL = "https://github.com/prakash4every/SahcharAI_Charbot/releases/tag/38(4.8)";
-
-            // Saare links ko fix karo
-            document.querySelectorAll('a[href*="SahcharAI_Charbot"]').forEach(function(el) {
-                if (el.href.includes('download')) {
-                    el.href = CORRECT_DOWNLOAD_URL;
-                } else if (el.href.includes('releases/tag')) {
-                    el.href = CORRECT_RELEASE_URL;
-                } else {
-                    // Agar koi aur link hai toh use bhi correct karo
-                    el.href = CORRECT_DOWNLOAD_URL;
-                }
-                console.log("✅ Fixed link:", el.href);
-            });
-
-            // Special fix for download button and release link
-            const downloadBtn = document.getElementById('downloadBtn');
-            const releaseLink = document.getElementById('releaseLink');
-
-            if (downloadBtn) {
-                downloadBtn.href = CORRECT_DOWNLOAD_URL;
-                console.log("✅ Download button fixed to:", CORRECT_DOWNLOAD_URL);
-            }
-
-            if (releaseLink) {
-                releaseLink.href = CORRECT_RELEASE_URL;
-                console.log("✅ Release link fixed to:", CORRECT_RELEASE_URL);
-            }
-
-            console.log("🔗 All links are now pointing to the correct repository!");
-        })();
-    </script>
 </body>
 </html>
