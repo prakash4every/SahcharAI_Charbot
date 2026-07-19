@@ -473,37 +473,100 @@
             </div>
         </div>
 
-       <!-- ===== QR CODE SECTION ===== -->
-<div class="qr-section">
-    <img
-        src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://github.com/prakash4every/SahcharAI_Charbot/releases/download/38%284.8%29/SahcharAI.apk&bgcolor=ffffff&color=1e293b&margin=12"
-        alt="SahcharAI APK QR Code"
-        width="160"
-        height="160"
-        loading="lazy"
-    />
-    <span class="qr-label">📱 QR Code Scan करें और APK डाउनलोड करें</span>
-</div>
+        <!-- ===== QR CODE SECTION ===== -->
+        <div class="qr-section">
+            <img
+                src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://github.com/prakash4every/SahcharAI_Charbot/releases/download/38%284.8%29/SahcharAI.apk&bgcolor=ffffff&color=1e293b&margin=12"
+                alt="SahcharAI APK QR Code"
+                width="160"
+                height="160"
+                loading="lazy"
+            />
+            <span class="qr-label">📱 QR Code Scan करें और APK डाउनलोड करें</span>
+        </div>
 
-       <!-- ===== DOWNLOAD BUTTON ===== -->
-<a
-    class="btn-download"
-    href="https://github.com/prakash4every/SahcharAI_Charbot/releases/download/38(4.8)/SahcharAI.apk"
-    download
->
-    <svg viewBox="0 0 24 24"><path d="M5 20h14v-2H5v2zm7-18v13.17l-3.59-3.58L7 13l5 5 5-5-1.41-1.41L12 15.17V2z"/></svg>
-    📥 APK डाउनलोड करें (v4.8)
-</a>
-
+        <!-- ===== DOWNLOAD BUTTON - DUAL LINK STRATEGY ===== -->
+        <a
+            class="btn-download"
+            id="downloadBtn"
+            href="https://github.com/prakash4every/SahcharAI_Charbot/releases/download/38(4.8)/SahcharAI.apk"
+            download
+        >
+            <svg viewBox="0 0 24 24"><path d="M5 20h14v-2H5v2zm7-18v13.17l-3.59-3.58L7 13l5 5 5-5-1.41-1.41L12 15.17V2z"/></svg>
+            📥 APK डाउनलोड करें (v4.8)
+        </a>
         <div class="file-size">📦 फ़ाइल आकार: 16.3 MB • Android 7.0+</div>
 
         <!-- Footer -->
-        <!-- ===== GITHUB RELEASE LINK ===== -->
-<div class="github-link">
-    <span>🔗</span>
-    <a href="https://github.com/prakash4every/SahcharAI_Charbot/releases/tag/38(4.8)" target="_blank">GitHub Release</a>
-</div>
+        <div class="footer">
+            <div>👨‍💻 Developer: Ram Prakash Kumar</div>
+            <div style="margin-top: 4px;">🏢 SahcharAI Team</div>
+            <div class="github-link">
+                <span>🔗</span>
+                <a href="https://github.com/prakash4every/SahcharAI_Charbot/releases/tag/38(4.8)" target="_blank" id="releaseLink">GitHub Release</a>
+            </div>
         </div>
     </div>
+
+    <!-- ============================================================ -->
+    <!-- ===== JAVASCRIPT - FALLBACK LINK STRATEGY ===== -->
+    <!-- ============================================================ -->
+    <script>
+        (function() {
+            // Primary Link (Release Asset)
+            const RELEASE_URL = "https://github.com/prakash4every/SahcharAI_Charbot/releases/download/38(4.8)/SahcharAI.apk";
+            // Fallback Link (Raw File from Main Branch)
+            const RAW_URL = "https://raw.githubusercontent.com/prakash4every/SahcharAI_Charbot/main/SahcharAI.apk";
+
+            const downloadBtn = document.getElementById('downloadBtn');
+            const releaseLink = document.getElementById('releaseLink');
+
+            // Function to check if a URL is accessible
+            function checkUrl(url) {
+                return fetch(url, { method: 'HEAD', mode: 'no-cors' })
+                    .then(response => {
+                        // no-cors mode returns opaque response, we assume it's accessible
+                        return true;
+                    })
+                    .catch(() => {
+                        return false;
+                    });
+            }
+
+            // Set initial links
+            if (downloadBtn) {
+                downloadBtn.href = RELEASE_URL;
+                downloadBtn.dataset.fallback = RAW_URL;
+
+                // Try fallback if primary fails (on click)
+                downloadBtn.addEventListener('click', function(e) {
+                    // If the link is already the fallback, don't change
+                    if (this.href === RAW_URL) return;
+
+                    // Check if primary URL is accessible (we'll just attempt to fetch)
+                    // If it fails, switch to fallback
+                    checkUrl(RELEASE_URL).then(isAccessible => {
+                        if (!isAccessible) {
+                            this.href = RAW_URL;
+                            console.log("⚠️ Primary link failed, switched to fallback:", RAW_URL);
+                        }
+                    });
+                });
+            }
+
+            if (releaseLink) {
+                releaseLink.href = "https://github.com/prakash4every/SahcharAI_Charbot/releases/tag/38(4.8)";
+            }
+
+            // Also handle QR code - point to release
+            const qrImg = document.querySelector('.qr-section img');
+            if (qrImg) {
+                // QR code data remains release URL (encoded)
+                // No change needed
+            }
+
+            console.log("🔗 Download page ready with fallback strategy!");
+        })();
+    </script>
 </body>
 </html>
